@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <script>
+        function handleInbox(event) {
+            event.preventDefault(); 
+            window.location.href = "All_inbox.html"; 
+        }
+
+        function handlehome(event) {
+            event.preventDefault(); 
+            window.location.href = "home.html"; 
+        }
+
+
+        function loadContent(page) {
+            document.getElementById('contentFrame').src = page;
+        }
+    </script>
+</head>
+<body class="bg-gray-100 h-screen flex flex-col">
+    <!-- Sidebar and Header -->
+    <div class="flex flex-1 h-full">
+        <!-- Sidebar -->
+        <aside class="w-16 bg-white shadow-md flex flex-col h-full">
+            <div class="p-4">
+                <img src="images/LOGO.png" alt="Logo" class="w-8 h-8 object-cover">
+            </div>
+           
+            <nav class="flex-1 mt-6">
+                <a href="javascript:void(0);" onclick="handlehome(event)" class="flex items-center px-4 py-2 text-gray-600 hover:bg-gray-200">
+                    <i class="fas fa-house-user mr-3"></i>
+                </a>
+                <a href="javascript:void(0);" onclick="loadContent('search.html')" class="flex items-center px-4 py-2 text-gray-600 hover:bg-gray-200">
+                    <i class="fas fa-search mr-3"></i>
+                </a>
+                <a href="javascript:void(0);" onclick="loadContent('mail.html')" class="flex items-center px-4 py-2 text-gray-600 hover:bg-gray-200">
+                    <i class="fas fa-envelope-open mr-3"></i>
+                </a>
+                <a href="javascript:void(0);" onclick="loadContent('tweets.html')" class="flex items-center px-4 py-2 text-gray-600 hover:bg-gray-200">
+                    <i class="fas fa-paper-plane mr-3"></i>
+                </a>
+                <a href="javascript:void(0);" onclick="handleInbox(event)" class="flex items-center px-4 py-2 text-gray-600 hover:bg-gray-200">
+                    <i class="fas fa-inbox mr-3"></i>
+                </a>
+                <a href="javascript:void(0);" onclick="loadContent('graph.html')" class="flex items-center px-4 py-2 text-gray-600 hover:bg-gray-200">
+                    <i class="fas fa-chart-line mr-3"></i>
+                </a>
+            </nav>
+
+            <div class="p-4 border-t border-gray-200 flex justify-center items-center">
+                <i class="fas fa-user-circle text-gray-600 text-3xl"></i>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="flex-1 h-full">
+            <header class="bg-white shadow-md py-4 px-6 flex items-center justify-between">
+                <h2 class="text-2xl font-bold text-gray-800">Onebox</h2>
+                <h3 class="text-lg font-semibold">Ichha's Workplace
+                    <i class="fa fa-angle-down ml-2" aria-hidden="true"></i>
+                </h3>
+            </header>
+            <main class="content h-full">
+                <!-- Content will be loaded dynamically -->
+                <iframe id="contentFrame" src="home.html" class="w-full h-full border-0"></iframe>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
