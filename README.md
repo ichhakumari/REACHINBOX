@@ -78,7 +78,7 @@ npm start
         </ol>
     </div>
     <hr>
-    <h2>It is a Frontend Developer assignment  provided by ReachInbox to assess participants' skills and abilities for the position.</h2>
+    <h2>It was a Frontend Developer assignment  provided by ReachInbox to assess participants' skills and abilities for the position.</h2>
     <hr>
 </body>
 </html>
